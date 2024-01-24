@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(37, 37, 37);
+}
+
+.container {
+  margin: auto;
+  padding: 20px;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+header {
+  margin: auto;
+  border-bottom: 1px solid;
+  margin-bottom: 100px;
+  color: white;
+  padding-inline: 10px;
+}
+header h1 {
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+main {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+}
+.shake {
+  animation-name: wrongWord;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  translate: 0 0;
+}
+@keyframes wrongWord {
+  from {
+    translate: 0 0;
+  }
+  20% {
+    translate: 2% 0;
+  }
+  40% {
+    translate: -2% 0;
+  }
+  60% {
+    translate: 2% 0;
+  }
+  80% {
+    translate: -2% 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+main .line {
+  display: flex;
+  margin: auto;
+}
+main .line input {
+  width: 100px;
+  aspect-ratio: 1;
+  margin-left: 5px;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #eeeeee8c;
+  background-color: transparent;
+  color: white;
+  caret-color: transparent;
+  transition: background-color 0.5s 0.1s;
+}
+@media (max-width: 770px) {
+  main {
+    margin-inline: 10px;
+  }
+  main .line input {
+    max-width: 70px;
+    height: 70px;
+    font-size: 40px;
+  }
+}
+@media (max-width: 450px) {
+  main {
+    margin-inline: 10px;
+  }
+  main .line input {
+    max-width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+}
+.active {
+  animation: reveal 0.5s linear alternate;
+}
+@keyframes reveal {
+  from {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+main input:focus {
+  outline: none;
+}
+
+.win,
+.lose {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.712);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.win span,
+.lose span {
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.win span {
+  background-color: #6aaa64;
+}
+.lose span {
+  background-color: #7a1818;
+}
+.lose p {
+  font-size: 30px;
+  font-weight: bold;
+}
