@@ -1,11 +1,10 @@
-const jsonFilePath = "path/to/your/file.json";
 
 let boxes = document.querySelectorAll("main input");
 window.onload = () => {
   boxes[0].focus();
 };
 
-fetch("./dictionary.json")
+fetch("dictionary.json")
   .then((response) => response.json())
   .then((data) => {
     const dict = data;
