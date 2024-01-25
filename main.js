@@ -3,12 +3,12 @@ let boxes = document.querySelectorAll("main input");
 window.onload = () => {
   boxes[0].focus();
 };
-
+import { targetWords } from './targetWords.js'
 fetch("dictionary.json")
   .then((response) => response.json())
   .then((data) => {
     const dict = data;
-    let tragetWord = dict[Math.floor(Math.random() * 12972)];
+    let tragetWord = targetWords[Math.floor(Math.random() * 2315)];
     const pattern = /[a-zA-Z]{1}/i;
 
     function insertLetter(box) {
