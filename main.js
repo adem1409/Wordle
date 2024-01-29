@@ -80,7 +80,7 @@ fetch("dictionary.json")
       }
     }
     function wordExists(word) {
-      return dict.indexOf(word) >= 0 ? true : false;
+      return dict.indexOf(word.toLowerCase()) >= 0 ? true : false;
     }
     boxes.forEach((box) => {
       box.addEventListener("input", function () {
